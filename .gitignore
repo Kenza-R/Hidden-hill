@@ -1,0 +1,9 @@
+# Python virtual environments
+backend/.venv/
+
+# Local environment overrides
+backend/.env
+
+# Python cache artifacts
+__pycache__/
+*.py[cod]
