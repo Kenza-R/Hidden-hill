@@ -35,7 +35,7 @@ class JobCreateResponse(BaseModel):
 
 
 class VideoMetadata(BaseModel):
-    video_id: str
+    id: str = Field(alias="id")
     pubmed_id: str
     status: str
     video_url: Optional[str] = None
@@ -45,6 +45,7 @@ class VideoMetadata(BaseModel):
 
     class Config:
         from_attributes = True
+        populate_by_name = True
 
 
 class JobStatusResponse(BaseModel):
