@@ -29,9 +29,11 @@ def generate_video_task(self, job_id: str, pubmed_id: str) -> dict:
         reporter.update(progress=25)
 
         # TODO: Integrate professor's video generation pipeline.
+        # For now, use a mock video URL
+        video_url = "s3://fake/video.mp4"
         reporter.update(progress=90)
 
-        crud.update_job(session, job_id, status="completed", progress=100)
+        crud.update_job(session, job_id, status="completed", progress=100, video_url=video_url)
         logger.info("Completed job %s for pubmed_id=%s", job_id, pubmed_id)
         return {"job_id": job_id, "status": "completed"}
     except Exception as exc:  # pragma: no cover - defensive logging
