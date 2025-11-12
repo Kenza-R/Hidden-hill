@@ -1,0 +1,113 @@
+:root {
+  color-scheme: dark;
+}
+
+body.js-enabled {
+  scroll-behavior: smooth;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+a.is-active,
+button.is-active {
+  position: relative;
+}
+
+a.is-active::after,
+button.is-active::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: -0.45rem;
+  height: 0.15rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #a020f0 0%, #e535ab 100%);
+  opacity: 0.85;
+}
+
+.filter-chip {
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease,
+    color 180ms ease;
+}
+
+.filter-chip:focus-visible {
+  outline: 2px solid rgba(160, 32, 240, 0.65);
+  outline-offset: 2px;
+}
+
+.filter-chip.is-active {
+  background: linear-gradient(120deg, #ec4899 0%, #a855f7 100%);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px -20px rgba(160, 85, 247, 0.65);
+}
+
+.filter-card {
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.filter-card.is-hidden {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.dropzone {
+  position: relative;
+  transition: border-color 200ms ease, background-color 200ms ease, transform 200ms ease;
+}
+
+.dropzone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.dropzone.is-dragover {
+  border-color: rgba(127, 19, 236, 0.75);
+  background-color: rgba(44, 29, 62, 0.65);
+  transform: translateY(-2px);
+}
+
+.dropzone.has-file {
+  border-color: rgba(127, 19, 236, 0.95);
+  background-color: rgba(44, 29, 62, 0.9);
+}
+
+.file-feedback {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.file-feedback.error {
+  color: #f87171;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+

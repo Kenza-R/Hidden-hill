@@ -3,6 +3,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Hidden-hill Studio - Upload Paper</title>
+<link href="styles.css" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -68,15 +69,17 @@
 <h2 class="mx-auto max-w-xl text-base font-normal leading-relaxed text-white/60 @[480px]:text-lg lg:mx-0 lg:max-w-none">Upload your academic paper to begin the animation process.</h2>
 </div>
 <div class="flex w-full flex-col items-center gap-8">
-<div class="flex w-full cursor-pointer flex-col items-center justify-center gap-6 rounded-xl border-2 border-dashed border-primary/30 bg-[#2c1d3e]/50 p-10 py-16 text-center transition-colors hover:border-primary/60 hover:bg-[#2c1d3e]/80">
+<div aria-label="Upload your paper (PDF)" class="dropzone flex w-full cursor-pointer flex-col items-center justify-center gap-6 rounded-xl border-2 border-dashed border-primary/30 bg-[#2c1d3e]/50 p-10 py-16 text-center transition-colors hover:border-primary/60 hover:bg-[#2c1d3e]/80" data-dropzone="" role="button" tabindex="0">
+<input accept=".pdf,application/pdf" type="file"/>
 <span class="material-symbols-outlined text-6xl text-primary"> upload_file </span>
 <div class="flex flex-col gap-2">
 <p class="font-medium text-white/90">Drag &amp; drop your paper here</p>
 <p class="text-sm text-white/50">or click to browse files</p>
 </div>
-<p class="text-xs text-white/40">Accepted file types: PDF</p>
+<p class="text-xs text-white/60" data-file-name="">No file selected yet.</p>
 </div>
-<button class="flex h-12 min-w-[84px] w-full max-w-sm cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-5 text-base font-bold leading-normal tracking-[0.015em] text-white transition-all hover:bg-primary/90 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-background-dark">
+<p class="file-feedback text-xs text-white/50" data-file-feedback="">Accepted file types: PDF</p>
+<button class="flex h-12 min-w-[84px] w-full max-w-sm cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-5 text-base font-bold leading-normal tracking-[0.015em] text-white transition-all hover:bg-primary/90 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-background-dark" data-start-btn="" type="button">
 <span class="truncate">Start Transformation</span>
 </button>
 </div>
@@ -134,4 +137,4 @@
 </div>
 </div>
 </div>
-</div></body></html>
+</div><script src="studio.js" type="module"></script></body></html>

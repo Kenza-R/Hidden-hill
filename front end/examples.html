@@ -3,6 +3,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Our Work</title>
+<link href="styles.css" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
@@ -56,9 +57,20 @@
 <span class="truncate">Request a Demo</span>
 </button>
 </div>
-<button class="md:hidden">
+<div class="relative md:hidden">
+<button aria-controls="mobile-menu" aria-expanded="false" class="flex size-10 items-center justify-center rounded-lg border border-white/10 bg-surface-dark/70 text-text-dark transition hover:bg-surface-dark" data-mobile-toggle="" type="button">
 <span class="material-symbols-outlined text-text-dark">menu</span>
 </button>
+<div class="absolute right-0 mt-3 w-56 rounded-xl border border-white/10 bg-surface-dark/95 p-4 shadow-2xl shadow-primary/20 backdrop-blur hidden flex-col gap-3" data-mobile-menu="" hidden="" id="mobile-menu">
+<nav class="flex flex-col gap-2">
+<a class="text-sm font-medium leading-normal text-text-dark transition-colors hover:text-primary" href="#">Services</a>
+<a class="text-sm font-medium leading-normal text-text-dark transition-colors hover:text-primary" href="#">Our Work</a>
+<a class="text-sm font-medium leading-normal text-text-dark transition-colors hover:text-primary" href="#">About</a>
+<a class="text-sm font-medium leading-normal text-text-dark transition-colors hover:text-primary" href="#">Contact</a>
+</nav>
+<button class="mt-2 flex h-10 w-full items-center justify-center rounded-lg bg-primary text-sm font-bold text-white transition hover:bg-primary/90">Request a Demo</button>
+</div>
+</div>
 </div>
 </header>
 <main class="flex flex-1 justify-center py-5">
@@ -70,24 +82,25 @@
 </div>
 </div>
 <div class="flex flex-wrap justify-center gap-3 py-3">
-<button class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-secondary-accent px-4 text-white">
+<button aria-pressed="true" class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-secondary-accent px-4 text-white" data-filter="all" type="button">
 <p class="text-sm font-medium leading-normal">All</p>
 </button>
-<button class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-surface-dark px-4 text-text-dark transition-colors hover:bg-white/10">
+<button aria-pressed="false" class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-surface-dark px-4 text-text-dark transition-colors hover:bg-white/10" data-filter="biotechnology" type="button">
 <p class="text-sm font-medium leading-normal">Biotechnology</p>
 </button>
-<button class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-surface-dark px-4 text-text-dark transition-colors hover:bg-white/10">
+<button aria-pressed="false" class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-surface-dark px-4 text-text-dark transition-colors hover:bg-white/10" data-filter="genomics" type="button">
 <p class="text-sm font-medium leading-normal">Genomics</p>
 </button>
-<button class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-surface-dark px-4 text-text-dark transition-colors hover:bg-white/10">
+<button aria-pressed="false" class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-surface-dark px-4 text-text-dark transition-colors hover:bg-white/10" data-filter="clinical-trials" type="button">
 <p class="text-sm font-medium leading-normal">Clinical Trials</p>
 </button>
-<button class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-surface-dark px-4 text-text-dark transition-colors hover:bg-white/10">
+<button aria-pressed="false" class="flex h-9 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-surface-dark px-4 text-text-dark transition-colors hover:bg-white/10" data-filter="publisher-services" type="button">
 <p class="text-sm font-medium leading-normal">Publisher Services</p>
 </button>
 </div>
+<p class="px-4 text-center text-sm font-medium leading-normal text-subtle-dark" data-filter-status="">Showing all projects.</p>
 <div class="grid grid-cols-1 gap-6 p-4 sm:grid-cols-2 lg:grid-cols-3">
-<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-surface-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20">
+<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-surface-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20 filter-card" data-category="biotechnology">
 <div class="relative w-full overflow-hidden rounded-t-xl bg-cover bg-center bg-no-repeat pt-[56.25%]" data-alt="Abstract animation of gene editing strands" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCBXsVraoSnmx1zd4WVrxrX6PibcHX8ywFArXtWHK_368nqFFk1vTrPG4OTD38CZ225sU1uHXRWyfgsGKsjDTqwOLcUMm_oCM6LwCR1_0kQOyw2RDlXCb31OTbu1iaKIbFvd8TdRgAWMIWWTI2fRhbnrYvLlCwlnrgAFuuCKXnMxJv5-f61Qsg66kQ0ExPc9YOXGK73OpG8a9bUs3vIczAdi_6ifu-rY_66VNJgnl6r6XewhDkVCjfwo8NGC1TbRl79-QLWGKiY6jj2");'>
 <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
 <span class="material-symbols-outlined text-6xl text-white">play_circle</span>
@@ -99,7 +112,7 @@
 <p class="text-sm font-normal leading-normal text-subtle-dark">An animated breakdown of the revolutionary gene-editing tool and its applications.</p>
 </div>
 </div>
-<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-surface-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20">
+<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-surface-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20 filter-card" data-category="genomics">
 <div class="relative w-full overflow-hidden rounded-t-xl bg-cover bg-center bg-no-repeat pt-[56.25%]" data-alt="Stylized visualization of mRNA strands interacting with cells" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSvaYTuUyWZ0wYlS4taONnanTslg5MPQhTS8RgckO3ZFFj4XUE0Ou2Bpi3Y5XVATodLRMH61wLWsjuFtwJtWUM-nRgIS3FAM1Jj2Kha0Xn2D4jDofy4J_f-unv5vd6rfRRebJf6Bd69-NMzBkyXK3MsM6c8z0gJsfqVCr7BSM4A9EbR7wCTVSgPPsLNyM0r-g4qegGZIUI7s_l8lCchBCg9WX4Fg3QTGyRXdAKA6_fBLAegoN8i0kBlkoGNlaWx3fu8NYGvMMpTFAv");'>
 <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
 <span class="material-symbols-outlined text-6xl text-white">play_circle</span>
@@ -111,7 +124,7 @@
 <p class="text-sm font-normal leading-normal text-subtle-dark">A clear, visual journey into how mRNA vaccines instruct our cells to fight disease.</p>
 </div>
 </div>
-<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-surface-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20">
+<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-surface-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20 filter-card" data-category="biotechnology">
 <div class="relative w-full overflow-hidden rounded-t-xl bg-cover bg-center bg-no-repeat pt-[56.25%]" data-alt="Colorful abstract representation of neural pathways in a brain scan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAam0G4_3KsKKGbG4mqZowiiWp-6Y6536nDWTNW8M7NPp9h9ArPBCRoVETwazOb1e7WpUPgLzLlOJg2KOocC9YVyN69SizQWyvT51XFxPOhhGeBV4-BxLH1i9Drn_wsHj0_GxF1uyKp77UtLVvbuwxghxMePrjeJMk5_BKCvIg1l2FMi3LhPUdaLDVoX6L-6SHJHDyR2PkVetCNuEmHt_U3Pb20ENPUpwwtdlM9dMSv-ryo3vl3xZpwT5hByWC9NjSvhSkoEHReVfI7");'>
 <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
 <span class="material-symbols-outlined text-6xl text-white">play_circle</span>
@@ -123,7 +136,7 @@
 <p class="text-sm font-normal leading-normal text-subtle-dark">Infographic video showcasing advanced imaging techniques for brain activity.</p>
 </div>
 </div>
-<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-surface-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20">
+<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-surface-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20 filter-card" data-category="clinical-trials">
 <div class="relative w-full overflow-hidden rounded-t-xl bg-cover bg-center bg-no-repeat pt-[56.25%]" data-alt="Futuristic animation showing AI algorithms processing molecular data" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDU6K5IIehIs6rc8Wfygu4yfghl1dtX3aclmStJEKWZAKK0PQwaGPOLBFS3NoFvZ3Ni8Vak3BbeSn1jJYRKCqW4e6KPie3qquPWkbcs6xgSRibbwbZVXx_0v00le2Nuh5_RLCF4gPk28PARO-SLzVuW5HIUC96iC-i2eVZaRDSBeg3SMjQCeJn6zcmfAt6wpEM0l1EPhUg07hgG87hpp50U1CqfBhYuuWaQzqvf0mSoILVhJcK1cv9SZAOCRUhAqKl_BTcgp8cUUSz2");'>
 <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
 <span class="material-symbols-outlined text-6xl text-white">play_circle</span>
@@ -135,7 +148,7 @@
 <p class="text-sm font-normal leading-normal text-subtle-dark">Explainer on how machine learning algorithms are accelerating pharmaceutical research.</p>
 </div>
 </div>
-<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-surface-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20">
+<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-surface-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20 filter-card" data-category="publisher-services">
 <div class="relative w-full overflow-hidden rounded-t-xl bg-cover bg-center bg-no-repeat pt-[56.25%]" data-alt="Animated depiction of mitochondria inside a cell" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDoGzedYGJB-L-8CfanbPr_j5juJgpiiJEjpDuTGj_4k-TLEfBWu9lf3SEZX3nGyM4rj2kCpzzui30LRAJZ7QyQWi26lxrKKY7HZKD_IXkXebis8IHvfC8sxi_-jhwYlhmBgnjhI6HzmX7qhP5M33rJhfsXUMRoIjEYq94A5dzAYUQ-UMJOUC5_eSEjGHDbKJm4BbX9Xmo637fsM8pOYMhHLhwxFdTAkr6sRBy1gHY7uNDSi5FI_NvO2Y_ShZYaZHf2G5kpcnquu4a4");'>
 <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
 <span class="material-symbols-outlined text-6xl text-white">play_circle</span>
@@ -147,7 +160,7 @@
 <p class="text-sm font-normal leading-normal text-subtle-dark">A foundational biology concept brought to life for academic and student audiences.</p>
 </div>
 </div>
-<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-surface-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20">
+<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl bg-surface-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20 filter-card" data-category="publisher-services">
 <div class="relative w-full overflow-hidden rounded-t-xl bg-cover bg-center bg-no-repeat pt-[56.25%]" data-alt="Abstract visual of entangled particles in a quantum state" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB2vbCba5P5vpf3F7p-IbLWGRrxC2yLab0lpyjkODPo-U5Blx-PwPAbJZHsJhoCNxq2dlD55g-fCrDldIthCfNRs6xcWohy5ZmBqeoJ1i-eeOhImZTV8XYmyYhxfszGM3S6Z4rN3exGDx_y_Ss7fhpPhvyZnGuPlF_YQax95EbyaNkT1450zp-fIPnou-S4b3FyK9pEKvmY1w1YIGY7PAeqtmXJBF5nT1FnoxHtImQFE1OxMaEJJ11p4v_rmXReVpi1ks-vN8OE9Jkb");'>
 <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
 <span class="material-symbols-outlined text-6xl text-white">play_circle</span>
@@ -183,4 +196,5 @@
 </div>
 </footer>
 </div>
+<script src="examples.js" type="module"></script>
 </body></html>

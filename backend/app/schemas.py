@@ -13,6 +13,12 @@ class HealthResponse(BaseModel):
     status: str = "ok"
 
 
+class HealthDetailedResponse(BaseModel):
+    api: str = "ok"
+    redis: bool
+    celery_ping: bool
+
+
 class VideoGenerateRequest(BaseModel):
     pubmed_id: str = Field(..., min_length=3, description="PubMed, PMC, or PMID identifier")
     user_email: Optional[EmailStr] = Field(

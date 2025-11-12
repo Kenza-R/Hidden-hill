@@ -48,3 +48,44 @@ def list_videos(db: Session, limit: int = 50) -> list[models.Video]:
         .limit(limit)
         .all()
     )
+
+
+def update_job(
+    db: Session,
+    job_id: str,
+    *,
+    status: Optional[str] = None,
+    progress: Optional[int] = None,
+    celery_task_id: Optional[str] = None,
+    video_url: Optional[str] = None,
+    error_message: Optional[str] = None,
+) -> Optional[models.Job]:
+    """Update job/video state and persist changes."""
+    job = (
+        db.query(models.Job)
+        .options(joinedload(models.Job.video))
+        .filter(models.Job.id == job_id)
+        .one_or_none()
+    )
+    if not job:
+        return None
+
+    if status is not None:
+        job.status = status
+        if job.video:
+            job.video.status = status
+    if progress is not None:
+        job.progress = progress
+    if celery_task_id is not None:
+        job.celery_task_id = celery_task_id
+
+    if job.video:
+        if video_url is not None:
+            job.video.video_url = video_url
+        if error_message is not None:
+            job.video.error_message = error_message
+
+    db.add(job)
+    db.commit()
+    db.refresh(job)
+    return job
